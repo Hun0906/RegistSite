@@ -35,7 +35,7 @@ table, th, td {
 		onsubmit="return validateForm()" method="POST">
 		<table>
 			<tr>
-				<td><label for="id">아이디:</label></td>
+				<td><label for="id">아이디</label></td>
 				<td><input type="text" id="id" name="id" required
 					pattern="[A-Za-z0-9]{5,8}"
 					title="영문자와 숫자로 이루어진 5자리 이상 8자리 이하의 ID를 입력하세요." />
@@ -44,26 +44,26 @@ table, th, td {
 
 			</tr>
 			<tr>
-				<td><label for="pwd1">비밀번호:</label></td>
+				<td><label for="pwd1">비밀번호</label></td>
 				<td><input type="password" id="pwd1" name="pwd1" required /></td>
 			</tr>
 			<tr>
-				<td><label for="pwd2">비밀번호 재확인:</label></td>
+				<td><label for="pwd2">비밀번호 재확인</label></td>
 				<td><input type="password" id="pwd2" name="pwd2" required /></td>
 			</tr>
 			<tr>
-				<td><label for="name">이름:</label></td>
+				<td><label for="name">이름</label></td>
 				<td><input type="text" id="name" name="name" required /></td>
 			</tr>
 			<tr>
-				<td><label for="gender">성별:</label></td>
+				<td><label for="gender">성별</label></td>
 				<td><input type="radio" id="male" name="gender" value="male"
 					required /> <label for="male">남성</label> <input type="radio"
 					id="female" name="gender" value="female" required /> <label
 					for="female">여성</label></td>
 			</tr>
 			<tr>
-				<td><label for="birthYear">생년월일:</label></td>
+				<td><label for="birthYear">생년월일</label></td>
 				<td><select id="birthYear" name="birthYear" required>
 						<option value="" disabled selected>년도</option>
 						<option value="1990">1990년</option>
@@ -140,52 +140,85 @@ table, th, td {
 					for="lunar">음력</label></td>
 			</tr>
 			<tr>
-				<td><label for="tel">전화번호:</label></td>
+				<td><label for="tel">전화번호</label></td>
 				<td><select id="tel1" name="tel1" required>
-						<option value="" disabled selected>지역번호</option>
-						<!-- 지역번호 옵션을 동적으로 생성하는 JavaScript 코드를 작성해야 합니다. -->
-				</select> <input type="text" id="tel2" name="tel2" required
+							<option>없음</option>
+							<option value="02">02</option>
+							<option value="031">031</option>
+							<option value="032">032</option>
+							<option value="033">033</option>
+							<option value="041">041</option>
+							<option value="042">042</option>
+							<option value="043">043</option>
+							<option value="044">044</option>
+							<option value="051">051</option>
+							<option value="052">052</option>
+							<option value="053">053</option>
+							<option value="054">054</option>
+							<option value="055">055</option>
+							<option value="061">061</option>
+							<option value="062">062</option>
+							<option value="063">063</option>
+							<option value="064">064</option>
+							<option value="0502">0502</option>
+							<option value="0503">0503</option>
+							<option value="0505">0505</option>
+							<option value="0506">0506</option>
+							<option value="0507">0507</option>
+							<option value="0508">0508</option>
+							<option value="070">070</option>
+				</select> - <input type="text" id="tel2" name="tel2" required
 					pattern="[0-9]{3,4}" title="숫자로 이루어진 3자리 이상 4자리 이하의 전화번호를 입력하세요." />
-					<input type="text" id="tel3" name="tel3" required
+					 - <input type="text" id="tel3" name="tel3" required
 					pattern="[0-9]{4}" title="숫자로 이루어진 4자리의 전화번호를 입력하세요." /></td>
 			</tr>
 			<tr>
-				<td><label for="mobile">휴대폰 번호:</label></td>
+				<td><label for="mobile">휴대폰 번호</label></td>
 				<td><select id="mobile1" name="mobile1" required>
-						<option value="" disabled selected>---</option>
-						<!-- 통신사 옵션을 동적으로 생성하는 JavaScript 코드를 작성해야 합니다. -->
-				</select> <input type="text" id="mobile2" name="mobile2" required
+							<option>없음</option>
+							<option selected value="010">010</option>
+							<option value="011">011</option>
+							<option value="016">016</option>
+							<option value="017">017</option>
+							<option value="018">018</option>
+							<option value="019">019</option>
+				</select> - <input type="text" id="mobile2" name="mobile2" required
 					pattern="[0-9]{3,4}" title="숫자로 이루어진 3자리 이상 4자리 이하의 휴대폰 번호를 입력하세요." />
-					<input type="text" id="mobile3" name="mobile3" required
-					pattern="[0-9]{4}" title="숫자로 이루어진 4자리의 휴대폰 번호를 입력하세요." /></td>
-					
+					- <input type="text" id="mobile3" name="mobile3" required
+					pattern="[0-9]{4}" title="숫자로 이루어진 4자리의 휴대폰 번호를 입력하세요." /><br><br>
+				<input type="checkbox"	name="smssts_yn" value="Y" checked /> 쇼핑몰에서 발송하는 SMS 소식을 수신합니다.</td>	
 			</tr>
 			<tr>
-				<td><label for="email">이메일:</label></td>
-				<td><input type="email" id="email" name="email" required /></td>
-				
+				<td><label for="email">이메일</label></td>
+				<td><input size="10px"   type="text" name="email1" /> @ <input  size="10px"  type="text"name="email2" /> 
+						  <select name="email2" onChange=""	title="직접입력">
+									<option value="non">직접입력</option>
+									<option value="hanmail.net">hanmail.net</option>
+									<option value="naver.com">naver.com</option>
+									<option value="yahoo.co.kr">yahoo.co.kr</option>
+									<option value="hotmail.com">hotmail.com</option>
+									<option value="paran.com">paran.com</option>
+									<option value="nate.com">nate.com</option>
+									<option value="google.com">google.com</option>
+									<option value="gmail.com">gmail.com</option>
+									<option value="empal.com">empal.com</option>
+									<option value="korea.com">korea.com</option>
+									<option value="freechal.com">freechal.com</option>
+							</select><br> <br> <input type="checkbox" name="emailsts_yn" value="Y" checked /> 쇼핑몰에서 발송하는 e-mail을 수신합니다.</td>
+				</tr>
 			</tr>
 			<tr>
-				<td><label for="zipcode">우편번호:</label></td>
-				<td><input type="text" id="zipcode" name="zipcode" required
-					readonly />
-					<button type="button" onclick="searchZipcode()">우편번호 검색</button></td>
-			</tr>
-			<tr>
-				<td><label for="roadAddress">도로명주소:</label></td>
-				<td><input type="text" id="roadAddress" name="roadAddress"
-					required readonly /></td>
-			</tr>
-			<tr>
-				<td><label for="jibunAddress">지번주소:</label></td>
-				<td><input type="text" id="jibunAddress" name="jibunAddress"
-					required readonly /></td>
-			</tr>
-			<tr>
-				<td><label for="namujiAddress">나머지 주소:</label></td>
-				<td><input type="text" id="namujiAddress" name="namujiAddress"
-					required /></td>
-			</tr>
+				<td><label for="juso">주소</label></td>
+				<td>
+					  <input type="text" id="zipcode" name="zipcode" size="10" > <a href="javascript:execDaumPostcode()">우편번호검색</a>
+					  <br>
+					  <p> 
+					   지번 주소:<br><input type="text" id="roadAddress"  name="roadAddress" size="50"><br><br>
+					  도로명 주소: <input type="text" id="jibunAddress" name="jibunAddress" size="50"><br><br>
+					  나머지 주소: <input type="text"  name="namujiAddress" size="50" />
+					 <!--   <span id="guide" style="color:#999"></span> -->
+					   </p>
+					</td>
 			<tr>
 				<td></td>
 				<td><input type="submit" value="회원가입" /></td>
