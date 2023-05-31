@@ -106,7 +106,7 @@ function fn_overlapped(){
  }	
 </script>
 <script>
-    function validateForm() {
+    function validateForm() { //입력이 되어있는지? 입력값이 올바른지 체크
         // ID validation
         var id = document.forms["registrationForm"]["id"].value;
         var idRegex = /^[A-Za-z0-9]+$/;
@@ -257,12 +257,6 @@ function fn_overlapped(){
 								<option value="062">062</option>
 								<option value="063">063</option>
 								<option value="064">064</option>
-								<option value="0502">0502</option>
-								<option value="0503">0503</option>
-								<option value="0505">0505</option>
-								<option value="0506">0506</option>
-								<option value="0507">0507</option>
-								<option value="0508">0508</option>
 								<option value="070">070</option>
 						</select> - <input size="10px" type="text" name="tel2" required
 							pattern="[0-9]{3,4}" title="숫자로 이루어진 3자리 이상 4자리 이하의 전화번호를 입력하세요.">
@@ -284,8 +278,8 @@ function fn_overlapped(){
 							title="숫자로 이루어진 3자리 이상 4자리 이하의 휴대폰 번호를 입력하세요."> - <input
 							size="10px" type="text" name="hp3" required pattern="[0-9]{4}"
 							title="숫자로 이루어진 4자리의 휴대폰 번호를 입력하세요."><br> <br>
-							<input type="checkbox" name="smssts_yn" value="Y" /> 쇼핑몰에서 발송하는
-							SMS 소식을 수신합니다.</td>
+							<input type="checkbox" name="smssts_yn" value="Y" />
+							SMS 수신을 동의합니다.</td>
 					</tr>
 					<tr class="dot_line">
 						<td class="fixed_join">이메일<br>(e-mail)
@@ -297,16 +291,11 @@ function fn_overlapped(){
 								<option value="hanmail.net">hanmail.net</option>
 								<option value="naver.com">naver.com</option>
 								<option value="yahoo.co.kr">yahoo.co.kr</option>
-								<option value="hotmail.com">hotmail.com</option>
-								<option value="paran.com">paran.com</option>
 								<option value="nate.com">nate.com</option>
 								<option value="google.com">google.com</option>
 								<option value="gmail.com">gmail.com</option>
-								<option value="empal.com">empal.com</option>
-								<option value="korea.com">korea.com</option>
-								<option value="freechal.com">freechal.com</option>
 						</select><br> <br> <input type="checkbox" name="emailsts_yn"
-							value="Y" /> 쇼핑몰에서 발송하는 e-mail을 수신합니다.</td>
+							value="Y" />e-mail 수신을 동의합니다.</td>
 					</tr>
 					<tr class="dot_line">
 						<td class="fixed_join">주소</td>
@@ -318,7 +307,6 @@ function fn_overlapped(){
 									name="jibunAddress" size="50"><br>
 								<br> 나머지 주소: <input type="text" name="namujiAddress"
 									size="50" />
-								<!--   <span id="guide" style="color:#999"></span> -->
 							</p></td>
 					</tr>
 				</tbody>
