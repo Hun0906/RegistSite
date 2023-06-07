@@ -10,13 +10,54 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <style>
+
 table {
 	border-collapse: collapse;
+	max-width: 100%;
+	display: flex;
+    justify-content: center;
 }
 
 table, th, td {
 	border: 1px solid black;
 	padding: 5px;
+	border:none;
+}
+td.fixed_join{
+	background-color:lightslategray;
+	color:white;
+	font-weight:bold;
+}
+
+td{
+	background-color: #f4f4f4;
+}
+th {
+	background-color: gray;
+}
+
+h3 {
+	text-align: center;
+}
+
+.btn-overlapped {
+	display: inline-block;
+	padding: 8px 16px;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+	background-color: LimeGreen;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s;
+}
+
+.btn-overlapped:hover {
+	background-color: forestgreen;
 }
 </style>
 <script>
@@ -173,15 +214,17 @@ function fn_overlapped(){
 							title="영문자와 숫자로 이루어진 5자리 이상 8자리 이하의 ID를 입력하세요." /> <input
 							type="hidden" name="member_id" id="member_id" /> <input
 							type="button" id="btnOverlapped" value="중복체크"
-							onClick="fn_overlapped()" /></td>
+							onClick="fn_overlapped()" class="btn-overlapped" /></td>
 					</tr>
 					<tr class="dot_line">
 						<td class="fixed_join">비밀번호</td>
-						<td><input name="member_pw" type="password" size="20" required /></td>
+						<td><input name="member_pw" type="password" size="20"
+							required /></td>
 					</tr>
 					<tr class="dot_line">
 						<td class="fixed_join">비밀번호 재확인</td>
-						<td><input name="member_confirm_pw" type="password" size="20" required /></td>
+						<td><input name="member_confirm_pw" type="password" size="20"
+							required /></td>
 					</tr>
 					<tr class="dot_line">
 						<td class="fixed_join">이름</td>
@@ -237,33 +280,6 @@ function fn_overlapped(){
 							name="member_birth_gn" value="1" />음력</td>
 					</tr>
 					<tr class="dot_line">
-						<td class="fixed_join">전화번호</td>
-						<td><select name="tel1">
-								<option>없음</option>
-								<option value="02">02</option>
-								<option value="031">031</option>
-								<option value="032">032</option>
-								<option value="033">033</option>
-								<option value="041">041</option>
-								<option value="042">042</option>
-								<option value="043">043</option>
-								<option value="044">044</option>
-								<option value="051">051</option>
-								<option value="052">052</option>
-								<option value="053">053</option>
-								<option value="054">054</option>
-								<option value="055">055</option>
-								<option value="061">061</option>
-								<option value="062">062</option>
-								<option value="063">063</option>
-								<option value="064">064</option>
-								<option value="070">070</option>
-						</select> - <input size="10px" type="text" name="tel2" required
-							pattern="[0-9]{3,4}" title="숫자로 이루어진 3자리 이상 4자리 이하의 전화번호를 입력하세요.">
-							- <input size="10px" type="text" name="tel3" required
-							pattern="[0-9]{4}" title="숫자로 이루어진 4자리의 전화번호를 입력하세요."></td>
-					</tr>
-					<tr class="dot_line">
 						<td class="fixed_join">휴대폰번호</td>
 						<td><select name="hp1">
 								<option>없음</option>
@@ -278,8 +294,8 @@ function fn_overlapped(){
 							title="숫자로 이루어진 3자리 이상 4자리 이하의 휴대폰 번호를 입력하세요."> - <input
 							size="10px" type="text" name="hp3" required pattern="[0-9]{4}"
 							title="숫자로 이루어진 4자리의 휴대폰 번호를 입력하세요."><br> <br>
-							<input type="checkbox" name="smssts_yn" value="Y" />
-							SMS 수신을 동의합니다.</td>
+							<input type="checkbox" name="smssts_yn" value="Y" /> SMS 수신을
+							동의합니다.</td>
 					</tr>
 					<tr class="dot_line">
 						<td class="fixed_join">이메일<br>(e-mail)
@@ -302,9 +318,9 @@ function fn_overlapped(){
 						<td><input type="text" id="zipcode" name="zipcode" size="10">
 							<a href="javascript:execDaumPostcode()">우편번호검색</a> <br>
 							<p>
-								지번 주소: <input type="text" id="roadAddress" name="roadAddress" size="50"><br>
-								<br> 도로명 주소: <input type="text" id="jibunAddress"
-									name="jibunAddress" size="50"><br>
+								지번 주소: <input type="text" id="jibunAddress" name="jibunAddress"
+									size="50"><br> <br> 도로명 주소: <input
+									type="text" id="roadAddress" name="roadAddress" size="50"><br>
 								<br> 나머지 주소: <input type="text" name="namujiAddress"
 									size="50" />
 							</p></td>
@@ -313,8 +329,7 @@ function fn_overlapped(){
 			</table>
 		</div>
 		<div class="clear">
-			<br>
-			<br>
+			<br> <br>
 			<table align=center>
 				<tr>
 					<td><input type="submit" value="회원 가입"> <input
